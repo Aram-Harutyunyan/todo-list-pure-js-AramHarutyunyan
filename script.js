@@ -29,12 +29,7 @@ function createButtonElement(value, onClick) {
   document.getElementById("input").value="";
   return button; // return the button
 }
-/**
- * 
- * @param {string} value - the value of the button
- * @param {HTMLElement} parent - the HTML element wrapper parent
- * @param {function} createButton - button creator function
- */
+
 function createAddTodoButtonElement(
   value, 
   parent, 
@@ -45,12 +40,11 @@ function createAddTodoButtonElement(
 }
 
 function addTodoItem(value, data) { 
-  
   const inputText= document.getElementById("input").value;
-  console.log(inputText)
+  if(inputText!==""){
   todos.push(inputText);
-  console.log(todos)
-  return renderTodoList(todos);
+  renderTodoList(todos);
+  }
 }
 function deleteTodoItem(event) { 
   event.target.parentElement.remove();
