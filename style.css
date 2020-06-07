@@ -1,0 +1,52 @@
+body{
+    text-align: center;
+    background-color: red;
+    animation-name: body;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes body {
+    from {background-color: aquamarine;}
+    to {background-color: white;}
+  }
+  ul {
+    list-style: none;
+    align-items: center;
+  }
+  
+  ul li:before {
+    content: '✓';
+  }
+  .add-todo {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .delete {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 8px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .delete :hover{
+      background-color: red;
+  }
+  .add-todo :hover{
+    background-color : black;
+}
+.item {
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+}
