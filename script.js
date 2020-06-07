@@ -1,11 +1,10 @@
-import {addTodoItem} from "./Modules/addTodoItem.js"
+//import {addTodoItem} from "./Modules/addTodoItem.js"
 const todos = []
 
 const todosContainer = document.querySelector('.container');
 const addTodoItemElement = document.querySelector('.add-todo-item');
-//debugger
 function createTodoItemElement(value) {
-  //debugger
+  
   const li = document.createElement('li'); // creating li HTML element
   li.classList = 'item'; // adding the .item class to the li class list
   const deleteButton = createButtonElement(
@@ -22,9 +21,9 @@ function createTodoItemElement(value) {
  * @param {function} onClick - the onClick function of the button
  */
 function createButtonElement(value, onClick) {  
-  //debugger
+  
   const button = document.createElement('button'); // creating button HTML element
-  console.log(button.classList= value==="Delete" ? "delete": "add-todo");
+  button.classList= value==="Delete" ? "delete": "add-todo";
   button.appendChild(document.createTextNode(value)); // appending the value to the button as child  
   button.onclick = onClick // appending onClick function to the button
   todos.pop()
@@ -40,7 +39,13 @@ function createAddTodoButtonElement(
   const addButtonElement = createButtonFc(value, addTodoItem);
   parent.appendChild(addButtonElement)
 }
-addTodoItem()
+function addTodoItem() { 
+  const inputText= document.getElementById("input").value;
+  if(inputText!==""){
+  todos.push(inputText);
+  renderTodoList(todos);
+  }
+}
 
 function deleteTodoItem(event) { 
   event.target.parentElement.remove();
