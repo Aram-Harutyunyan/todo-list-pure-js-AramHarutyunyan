@@ -40,7 +40,7 @@ function createAddTodoButtonElement(
   const addButtonElement = createButtonFc(value, addTodoItem);
   parent.appendChild(addButtonElement)
 }
-addTodoItem();
+addTodoItem()
 
 function deleteTodoItem(event) { 
   event.target.parentElement.remove();
