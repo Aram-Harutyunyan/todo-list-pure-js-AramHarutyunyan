@@ -1,4 +1,4 @@
-//import {addTodoItem} from "./Modules/addTodoItem.js"
+import {addTodoItem} from "./Modules/addTodoItem.js"
 const todos = []
 
 const todosContainer = document.querySelector('.container');
@@ -25,7 +25,7 @@ function createButtonElement(value, onClick) {
   const button = document.createElement('button'); // creating button HTML element
   button.classList= value==="Delete" ? "delete": "add-todo";
   button.appendChild(document.createTextNode(value)); // appending the value to the button as child  
-  button.onclick = onClick // appending onClick function to the button
+  button.onclick = value==="Delete"?onClick :()=>onClick(todos,renderTodoList) // appending onClick function to the button
   todos.pop()
   document.getElementById("input").value="";
   return button; // return the button
@@ -39,13 +39,8 @@ function createAddTodoButtonElement(
   const addButtonElement = createButtonFc(value, addTodoItem);
   parent.appendChild(addButtonElement)
 }
-function addTodoItem() { 
-  const inputText= document.getElementById("input").value;
-  if(inputText!==""){
-  todos.push(inputText);
-  renderTodoList(todos);
-  }
-}
+
+
 
 function deleteTodoItem(event) { 
   event.target.parentElement.remove();
