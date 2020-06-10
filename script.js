@@ -1,4 +1,5 @@
 import {addTodoItem} from "./Modules/addTodoItem.js"
+import {deleteTodoItem} from "./Modules/deleteTodoItem.js"
 const todos = []
 
 const todosContainer = document.querySelector('.container');
@@ -38,12 +39,6 @@ function createAddTodoButtonElement(
 ) {
   const addButtonElement = createButtonFc(value, addTodoItem);
   parent.appendChild(addButtonElement)
-}
-
-
-
-function deleteTodoItem(event) { 
-  event.target.parentElement.remove();
 }
 function renderTodoList(data) {
   data.forEach(todo => {
